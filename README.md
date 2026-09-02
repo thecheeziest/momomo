@@ -35,14 +35,10 @@
 | --- | --- |
 | 1 | **[Releases](https://github.com/thecheeziest/momomo/releases/latest)** 페이지에서 `.dmg` 파일 다운로드 |
 | 2 | `.dmg` 파일 더블 클릭, `momomo.app`을 `Applications` 폴더로 드래그 |
-| 3 | 터미널에 하단 `xattr -cr /Applications/momomo.app` 붙여넣기 |
-| 4 | `Applications` 폴더 또는 Spotlight에서 momomo 실행 |
+| 3 | `Applications` 폴더 또는 Spotlight에서 momomo 실행 |
+| 4 | 첫 실행 시 *"인터넷에서 다운로드한 항목입니다"* 창이 뜨면 **열기** 클릭 |
 
-```bash
-xattr -cr /Applications/momomo.app
-```
-
-> momomo는 미서명 앱이라 최초 실행 또는 업데이트 후 `xattr` 명령어가 필요합니다
+> Apple 개발자 서명 + 공증을 받은 앱이라 별도 터미널 명령 없이 바로 실행됩니다
 
 
 
@@ -58,14 +54,18 @@ xattr -cr /Applications/momomo.app
 
 ## Updating
 
+`momomo`는 이제 앱 안에서 자동으로 업데이트됩니다.
+
 | 순서 | 작업 |
 | --- | --- |
-| 1 | 트레이 메뉴에서 **업데이트 확인** 클릭 |
-| 2 | 새 버전이 있으면 새 `.dmg` 파일 다운로드 |
-| 3 | `.dmg` 더블 클릭, `momomo.app`을 `Applications` 폴더로 드래그 |
-| 4 | "동일한 항목이 있습니다" 다이얼로그에서 **바꾸기(Replace)** 선택 |
-| 5 | 터미널에 `xattr -cr /Applications/momomo.app` 다시 실행 |
+| 1 | 새 버전이 나오면 앱이 감지해 **"지금 업데이트할까모?"** 창을 띄웁니다 (트레이 메뉴 → **업데이트 확인**으로 직접 확인도 가능) |
+| 2 | **업데이트** 클릭 → 자동으로 내려받아 설치하고 앱이 다시 켜집니다 |
+| 3 | 업데이트가 끝나면 바뀐 내용이 패치노트로 표시됩니다 |
 
-> 기존 `momomo.app`은 미리 삭제할 필요 없이 바꾸기만 하면 앱만 교체되고 메모 데이터(`~/Library/Application Support/momomo`)는 그대로 유지됩니다
+> `.dmg` 재다운로드 · 드래그 · 터미널 명령 모두 필요 없습니다
+>
+> 메모 데이터(`~/Library/Application Support/momomo`)는 업데이트와 무관하게 그대로 유지됩니다
 >
 > ⚠️ AppCleaner, CleanMyMac 같은 정리 앱으로 지우면 메모 데이터까지 함께 삭제됩니다 — 지울 땐 Finder에서 `momomo.app`만 휴지통으로
+>
+> v2.2.0 이하에서 올라오는 경우엔 한 번만 Releases에서 최신 `.dmg`를 받아 위 설치 방법대로 교체하면, 이후로는 자동 업데이트됩니다
